@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block body %}
+<form method="post" action="{% url 'staff:update_staff' staff.id %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Update</button>
+ <a href="{% url 'staff:view_staff' %}" class="btn btn-secondary">Cancel</a>
+</form>
+{% endblock %}

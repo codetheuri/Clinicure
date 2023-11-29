@@ -1,0 +1,38 @@
+
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h2 class="mb-4">Premium Subscribers</h2>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Email</th>
+                    <th> name And Email</th>
+                    <th>status</th>
+                    <th>actions</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                {% for y in subscriber %}
+                    <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td>{{ y.email }}</td>
+                        <td>{{ y.patient }}</td>
+                        <td>{{ y.status }}</td>
+                        <td>
+                             <div class="btn-group" role="group">
+                                 <a href="{% url 'premium:update_subscription' y.id %}" class="btn btn-primary">Edit</a>
+                                <a href="{% url 'premium:delete_subscription' y.id %}" class="btn btn-danger"><i class="bi bi-trash3-fill"></i>Delete</a>
+                            </div>
+                        </td>
+
+
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock %}

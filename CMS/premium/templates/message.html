@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block body %}
+<body>
+    <br>
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            <div class="mb-3">
+                <select class="form-select" aria-label="Default select example" name="status">
+                    <option selected>Select Option</option>
+                    <option value="all">All </option>
+                    <option value="subscribed">subscribed</option>
+                    <option value="unsubscribed">unsubscribed</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Email Subject</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="subject" name='subject'>
+              </div>
+            <div class="mb-3">
+                <label for="exampleFormControlTextarea1" class="form-label">Message</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send</button>
+           <a href="{% url 'premium:subscribe' %}" class="btn btn-success">Add subscribers</a>
+            <a href="{% url 'premium:subscribers' %}" class="btn btn-secondary">view subscribers</a>
+          </form>
+    </div>
+  </body>
+{% endblock %}

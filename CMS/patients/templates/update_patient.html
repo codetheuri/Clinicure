@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+ <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <h2>Edit Patient Information</h2>
+
+  <form method="post" action="{% url 'patients:update_patient' patient.id %}">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="first_name">First Name:</label>
+      <input type="text" name="first_name" value="{{ patient.first_name }}" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+      <label for="last_name">Last Name:</label>
+      <input type="text" name="last_name" value="{{ patient.last_name }}" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+      <label for="date_of_birth">Date of Birth:</label>
+      <input type="date" name="date_of_birth" value="{{ patient.date_of_birth }}" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+      <label for="gender">Gender:</label>
+      <select name="gender" class="form-control" required>
+        <option value="male" {% if patient.gender == 'male' %}selected{% endif %}>Male</option>
+        <option value="female" {% if patient.gender == 'female' %}selected{% endif %}>Female</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" name="email" value="{{ patient.email }}" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+      <label for="phone_number">Phone Number:</label>
+      <input type="text" name="phone_number" value="{{ patient.phone_number }}" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+      <label for="address">Address:</label>
+      <textarea name="address" class="form-control" required>{{ patient.address }}</textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a href="{% url 'patients:view_patients' %}" class="btn btn-secondary">Cancel</a>
+  </form>
+{% endblock %}

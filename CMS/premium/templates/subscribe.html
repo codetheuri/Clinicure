@@ -1,0 +1,14 @@
+
+{% extends 'base.html' %}
+
+{% block body %}
+    <div class="container mt-4">
+        <h2 class="mb-4">Subscribe to Premium</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+    </div>
+{% endblock %}

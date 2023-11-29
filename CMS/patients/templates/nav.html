@@ -1,0 +1,80 @@
+   {% block body %}
+     <nav class="sb-topnav navbar navbar-expand navbar-dark bg-success">
+            <!-- Navbar Brand-->
+            <a class="navbar-brand ps-3" href="{% url 'patients:view_patients' %}">Clinicure</a>
+
+
+
+
+          <div class="offcanvas-body">
+        <ul class="navbar-nav flex-grow-1 justify-content-between">
+
+        </ul>
+
+      </div>
+
+            <!-- Navbar-->
+
+         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="{% url 'staff:view_staff' %}" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i>staff</a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="{% url 'staff:view_staff' %}">View  Staff</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="{% url 'staff:add_staff' %}">Add Staff</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+          <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="{% url 'patients:view_patients' %}" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i>patients</a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="{% url 'patients:view_patients' %}">view  Patients</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="{% url 'patients:add_patient' %}">Appoint patient</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="{% url 'patients:add_treat' %}">Treat patient</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="{% url 'inventory:item_list' %}" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i>Inventory</a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="{% url 'inventory:item_list' %}">view inventory</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="{% url 'inventory:add_item' %}">Add to inventory</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+         <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="{% url 'staff:view_staff' %}" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i>premium</a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                          <li><a class="dropdown-item" href="{% url 'premium:subscribe' %}"> subscribe</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="{% url 'premium:subscribers' %}"> subscribers</a></li>
+                       <li><hr class="dropdown-divider" /></li>
+                       <li><a class="dropdown-item" href="{% url 'premium:custom_message' %}"> serve subscribers</a></li>
+
+                    </ul>
+                </li>
+            </ul>
+            <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i>settings</a>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="#!"></a></li>
+                        <li><a class="dropdown-item" href="#!"></a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                        <li><a class="dropdown-item" href="{% url 'user:logout' %}">Logout</a></li>
+
+
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+   {% endblock %}

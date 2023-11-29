@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Patient Appointment Form</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .container {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+            padding: 30px;
+        }
+
+        h6 {
+            color: #007bff;
+            text-align: center;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        .btn-primary, .btn-secondary {
+            width: 100%;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+{% block body %}
+<body>
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <h6>Patient Appointment Form</h6>
+                <form action="" method="post" class="border p-4">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <div class="bg-primary"></div>
+                    <div class="form-group text-center mt-3">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <a href="{% url 'patients:view_patients' %}" class="btn btn-secondary">Appointed patients</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+{% endblock %}
+</html>

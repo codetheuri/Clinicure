@@ -1,0 +1,32 @@
+<!-- patient_detail.html -->
+
+{% extends 'base.html' %}
+
+{% block title %}Patient Details{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h2 class="text-center">Patient {{ patient.first_name }} {{ patient.last_name }}</h2>
+
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ patient.first_name }} {{ patient.last_name }}</h5>
+                        <p class="card-text">
+                            <strong>Date Booked:</strong>{{ patient.date_added }} <br>
+                            <strong>Date of Birth:</strong> {{ patient.date_of_birth }}<br>
+                            <strong>Gender:</strong> {{ patient.gender }}<br>
+                            <strong>Email:</strong> {{ patient.email }}<br>
+                            <strong>Phone Number:</strong> {{ patient.phone_number }}<br>
+                            <strong>Address:</strong> {{ patient.address }}<br>
+
+
+                                                   </p>
+                    </div>
+                      <a href="{% url 'patients:view_patients' %}" class="btn btn-secondary">Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

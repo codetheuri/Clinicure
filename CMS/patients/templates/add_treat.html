@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block body %}
+   <title>Add Treatment</title>
+
+<div class="container mt-5">
+    <h2 class="text-center">Add New Treatment</h2>
+
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Add Treatment</button>
+                 <a href="{% url 'patients:view_patients' %}" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

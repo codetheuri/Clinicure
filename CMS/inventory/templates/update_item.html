@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block body %}
+  <h2>Update Item</h2>
+
+  <form method="post" action="{% url 'inventory:update_item' items.id %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Update</button>
+   <a href="{% url 'inventory:item_list' %}" class="btn btn-secondary">Cancel</a>
+  </form>
+{% endblock %}

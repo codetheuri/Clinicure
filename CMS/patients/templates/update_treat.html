@@ -1,0 +1,40 @@
+
+{% extends 'base.html' %}
+{% block body %}
+{% load static %}
+ <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+  <h2>Edit Treatment Infromation Information</h2>
+
+  <form method="post" action="{% url 'patients:update_treat' treat.id %}">
+    {% csrf_token %}
+    <div class="form-group">
+      <label for="first_name">Patient Name:</label>
+      <input type="text" name="patient_name" value="{{ treat.patient_name }}" class="form-control" required>
+    </div>
+
+       <div class="form-group">
+      <label for="date_of_birth">Symptoms:</label>
+      <input type="date" name="symptoms" value="{{ treat.symptoms }}" class="form-control" required>
+    </div>
+
+      <div class="form-group">
+      <label for="email">Conclusion</label>
+      <input type="email" name="conclusion" value="{{ treat.conclusion }}" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+      <label for="phone_number">Medication</label>
+      <input type="text" name="medication" value="{{ treat.medication }}" class="form-control" required>
+    </div>
+
+    <div class="form-group">
+      <label for="address">Cost</label>
+      <textarea name="cost" class="form-control" required>{{ treat.cost }}</textarea>
+    </div>
+
+
+
+    <button type="submit" class="btn btn-primary">Update</button>
+    <a href="{% url 'patients:view_patients' %}" class="btn btn-secondary">Cancel</a>
+  </form>
+{% endblock %}

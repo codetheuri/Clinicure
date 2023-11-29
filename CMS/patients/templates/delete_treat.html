@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete Treatment {% endblock %}
+
+{% block body %}
+  <div class="container mt-5">
+    <h2 class="text-center">Delete Treatment Record</h2>
+
+    <div class="card mx-auto" style="max-width: 400px;">
+      <div class="card-body">
+        <p class="card-text">Are you sure you want to delete treatment on Patient <strong>'{{ treat.patient_name}} '</strong>?</p>
+
+        <form method="post" action="{% url 'patients:delete_treat' treat.id %}">
+          {% csrf_token %}
+          <div class="text-center">
+            <button type="submit" class="btn btn-danger">Confirm Delete</button>
+            <a href="{% url 'patients:view_patients' %}" class="btn btn-secondary">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+

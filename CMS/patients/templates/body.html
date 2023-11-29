@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+ <div class="container-fluid px-4 ">
+     <h1 class="mt-4">Clinicure   <span class=" font-italic h6 my-3 ">" Managing with Precision."</span> </h1>
+
+{#                        <ol class="breadcrumb mb-4">#}
+{#                            <li class="breadcrumb-item active">Dashboard</li>#}
+{#                        </ol>#}
+                            {% if user.is_authenticated %}
+        <p class="text-dark">Welcome, <strong class="text text-dark-emphasis">{{ user.username }}!</strong></p>
+    {% else %}
+        <p>Welcome to the dashboard!</p>
+    {% endif %}
+
+                        <div class="row col-12 ">
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-primary text-white mb-4">
+                                    <div class="card-body" > {{ staff_count }}  staffs </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link text-decoration-none"  href="{% url 'staff:view_staff' %}">Staff Records</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-warning text-white mb-4">
+                                    <div class="card-body">{{  patient_count }} Patients
+                                    </div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link text-decoration-none" href="{% url 'patients:view_patients' %}">Patients Records</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-success text-white mb-4">
+                                    <div class="card-body">Inventory</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link text-decoration-none" href="{% url 'inventory:item_list' %}">Inventory Records</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-info text-white mb-4">
+                                    <div class="card-body">Billing</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link text-decoration-none" href="{% url 'stkpush:stk' %}">Make payments</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+</body>
+</html>
