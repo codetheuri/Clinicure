@@ -43,8 +43,8 @@ def pay(request):
             "PartyB": LipanaMpesaPpassword.Business_short_code,
             "PhoneNumber": phone,
             "CallBackURL": "https://sandbox.safaricom.co.ke/mpesa/",
-            "AccountReference": "Joseph Theuri Wambugu for supper, nainama",
-            "TransactionDesc": "leo nainama bana",
+            "AccountReference": "Clinicure clinic",
+            "TransactionDesc": "medical payment",
         }
 
     response = requests.post(api_url, json=request, headers=headers)
