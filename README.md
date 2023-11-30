@@ -1,5 +1,5 @@
 # Clinicure
-Clinicure is a web-based health management system designed to streamline patient appointments, treatments, inventory , and premium subscriptions for medical clinics. It offers a user-friendly interface for clinic staff,   allowing easy management of health records and access to premium health facts.
+Clinicure is a web-based health management system designed to streamline patient appointments, treatments, inventory, payment via mpesa and premium subscriptions for medical clinics. It offers a user-friendly interface for clinic staff,   allowing easy management of health records and access to premium health facts.
 
 ## Table of Contents
 - [Features](#features)
