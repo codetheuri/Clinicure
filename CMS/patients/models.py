@@ -34,4 +34,4 @@ class treatment(models.Model):
     cost = models.CharField(max_length=100)
 
     def __str__(self):
-        return f"{self.patient_name}"
+        return f"{self.patient_name} treated on {self.date_treated}"

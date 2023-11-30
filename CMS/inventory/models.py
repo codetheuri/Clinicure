@@ -13,4 +13,4 @@ class item(models.Model):
     date_added = models.DateField(auto_now_add=True)
 
     def __str__(self):
-        return self.item_name
+        return f"{self.item_name} quantity { self.quantity}"
