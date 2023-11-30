@@ -1,5 +1,4 @@
 from django.http import HttpResponse
-from django.shortcuts import render
 import requests
 from requests.auth import HTTPBasicAuth
 import json

@@ -31,7 +31,7 @@
                 <tbody>
                     {% for y in latest_patients %}
                     <tr>
-                        <th scope="row" aria-sort="ascending">{{y.id}}</th>
+                        <th  scope="row" aria-sort="descending">{{ forloop.counter }}</th>
                         <td>{{ y.date_added }}</td>
                         <td>{{ y.first_name }}</td>
                         <td>{{ y.last_name }}</td>

@@ -26,7 +26,7 @@ def viewpatients(request):
     patient_count = patients.objects.count()
     treat = treatment.objects.all()
     latest_treats = treatment.objects.order_by('date_treated')[:]
-    latest_patients = patients.objects.order_by('date_added')[:]
+    latest_patients = patients.objects.order_by('-date_added')[:]
     context = {
         'patient': patient,
         'treat': treat,
