@@ -20,8 +20,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('patients.urls')),
     path('staff/', include('staff.urls')),
-    path('inventory/',include('inventory.urls')),
+    path('inventory/', include('inventory.urls')),
     path('pay/', include('stkpush.urls')),
-    path('user/',include('user.urls')),
+    path('user/', include('user.urls')),
     path('premium/', include('premium.urls')),
 ]

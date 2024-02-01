@@ -10,6 +10,6 @@ urlpatterns = [
     path('token', views.token, name='token'),
     path('pay', views.pay, name='pay'),
     path('stk', views.stk, name="stk"),
-    path('success', views.success, name= "success"),
+    path('success', views.success, name="success"),
 
 ]
